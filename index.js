@@ -21,7 +21,7 @@
 //   }
 // })()
 
-const http = require('http');
+const http = require('http'),
 axios = require('axios'),
 logger = require('morgan'),
 cors = require('cors'),
@@ -31,19 +31,23 @@ bodyParser = require('body-parser');
 var app = express();
 var port = 8000;
 
-app.use(bodyParser.json())
+app.use(bodyParser.json());
+app.use(logger('tiny'));
+app.use(require('./routes'));
 
-app.get('/hello/:foo/:bar', (req, res) =>{
-    res.json({message:'Hello BScBest!', data:[
-        req.params.foo,
-        req.params.bar
-    ]});
-});
+//this was added to the routes.js
 
-//post request
-app.post('/hello', (req, res) => {
-    res.json({result: 'Post was sent', data: req.body});
-});
+// app.get('/hello/:foo/:bar', (req, res) =>{
+//     res.json({message:'Hello BScBest!', data:[
+//         req.params.foo,
+//         req.params.bar
+//     ]});
+// });
+
+// //post request
+// app.post('/hello', (req, res) => {
+//     res.json({result: 'Post was sent', data: req.body});
+// });
 
 
 
