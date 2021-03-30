@@ -81,9 +81,9 @@ let users = []; // names of users will be stored here
 // });
 
 
-// app.listen(port, function(err){
-//     console.log('Listening on port: ' + port);
-// });
+app.listen(port, function(err){
+    console.log('Listening on port: ' + port);
+});
 
 const dbURI = "mongodb://localhost/test";
 
