@@ -22,7 +22,7 @@
 // })()
 
 const http = require('http'),
-axios = require('axios'),
+// axios = require('axios'),
 logger = require('morgan'),
 cors = require('cors'),
 express = require('express'),
@@ -57,17 +57,20 @@ app.use(require('./routes'));
 //   res.end(); //end the response
 // }).listen(8000); // listen for requests on port 8000
 
-let users = []; // names of users will be stored here
-(async function getNames(){
-  try{
-    const {data} = await axios.get("https://swapi.dev/api/people/");
-    console.log(data)
-    users = data.results.map(user=>user.name);
-    console.log(users);
-    } catch(error){
-    console.log(error)
-  }
-})()
+
+//start wars API
+
+// let users = []; // names of users will be stored here
+// (async function getNames(){
+//   try{
+//     const {data} = await axios.get("https://swapi.dev/api/people/");
+//     console.log(data)
+//     users = data.results.map(user=>user.name);
+//     console.log(users);
+//     } catch(error){
+//     console.log(error)
+//   }
+// })()
 
 
 // mongoose.connect('mongodb://localhost/test');
